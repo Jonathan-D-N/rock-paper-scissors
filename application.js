@@ -2,78 +2,51 @@
 //global variables
 let playerPoint = (0);
 let computerPoint = (0);
-let draw = (0);
 let rounds = (1);
-//runs the game
-game();
-function game() {
-    if (rounds <= 5) {
-        playerPlay();
-    } else {
-        declareWinner();
-    }
-    // -- unused for now. Game will be re-written in a more efficient manner in the future to properly utilize a loop --
-    // for(let i = 1; i <= 5; i++) {
-    //     console.log(i)
-    //     playerPlay();
-    //     } 
-    }
+let playerSelection;
+let computerSelection;
 
+// Declares a random value, 'rock', 'paper', or 'scissors' for the computer player. Call using the computerPlay() function.
+const gameValues = ['rock', 'paper', 'scissors'];
 
-// Declares a random value, 'rock', 'paper', or 'scissors' for the computer player. Outputs the global variable: computerSelection
 function computerPlay() {
-    let gameValues = ['rock', 'paper', 'scissors'];
-    let computerRandom = Math.floor(Math.random() * gameValues.length);
-        if (computerRandom === 0) {
-            return computerSelection = 'rock';
-        } else if (computerRandom === 1) {
-            return computerSelection = 'paper';
-        } else if (computerRandom === 2) {
-            return computerSelection = 'scissors';
-        }
+    return gameValues[~~(Math.random() * gameValues.length)];
     }
-// Takes input from the player. Outputs the global variable: playerSelection
-function playerPlay() {
-    let playerInput = prompt('Input "rock", "paper", or "scissors"')
-    let playerOutput = playerInput.toLowerCase();
-        if (playerOutput == 'rock' || playerOutput == 'paper' || playerOutput == 'scissors') {
-            computerPlay();
-            playerSelection = (playerOutput);
-            return compareResults();
-            //return console.log('Player: ' + playerSelection) + console.log('computer: ' + computerSelection);
+
+//Take player input, force lowercase, compare results, add points for winner and add to rounds variable, loop function if a draw is met.
+function playerPlay(computerSelection, playerSelection) {
+    playerSelection = prompt('Input "rock", "paper", or "scissors"')
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerPlay().toLowerCase();
+    if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') { 
+        ('rock' > 'scissors');
+        ('paper' > 'rock');
+        ('scissors' > 'paper');
+        if (computerSelection == playerSelection) {
+            console.log('Draw!');
+            return (playerPlay());
+        } else if (computerSelection < playerSelection) {
+            computerPoint = ++computerPoint;
+            rounds = ++rounds;
+            console.log('You lose! ' + computerSelection + ' beats ' + playerSelection + '!');
+            console.log('Player Points: ', playerPoint);
+            console.log('Computer Points: ', computerPoint);
         } else {
-            console.log(`'${playerOutput}' is not a valid input. Please input "rock", "paper", or "scissors"`);
-            game();
-        }    
-}
-// compares results of playerSelection and computerSelection, outputs: computerPoint or playerPoint
-function compareResults() {
-    ('rock' > 'scissors');
-    ('scissors' > 'paper');
-    ('paper' > 'rock');
-    if (playerSelection > computerSelection){
-        playerPoint++
-        rounds++
-        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('You have ' + playerPoint + ' points') + console.log('Computer has ' + computerPoint + ' points');
-        game();
-        return
-    } else if (playerSelection < computerSelection) {
-        computerPoint++
-        rounds++
-        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('You have ' + playerPoint + ' points') + console.log('Computer has ' + computerPoint + ' points');
-        game();
-        return
+            playerPoint = ++playerPoint;
+            rounds = ++rounds;
+            console.log('You win! ' + playerSelection + ' beats ' + computerSelection + '!');
+            console.log('Player Points: ', playerPoint);
+            console.log('Computer Points: ', computerPoint);
+        }
     } else {
-        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***Draw!***');
-        draw++
-        game();
+        console.log(`${playerSelection } is not a valid input. Please input "rock", "paper", or "scissors"`)
+        return (playerPlay());
     }
 }
-// Declares winner by comparing points
-function declareWinner() {
-    if (playerPoint > computerPoint) {
-        console.log('You win!')
-    } else {
-        console.log('Computer wins!')
+//runs the game until 5 rounds happen
+function game() {
+    while (rounds <= 5) {
+        playerPlay();
     }
 }
+game();
