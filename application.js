@@ -17,27 +17,34 @@
 // runGame compares values of inputs from both variables
 // declares a win , lose , or draw to the user based on input from playerSelection and computerSelection
 
-
+// Declares a random value, 'rock', 'paper', or 'scissors' for the computer player.
 function computerPlay() {
     let gameValues = ['rock', 'paper', 'scissors'];
-    let randomValue = Math.floor(Math.random() * gameValues.length);
-        if (randomValue === 0) {
-            return ('rock');
-        } else if (randomValue === 1) {
-            return ('paper');
-        } else if (randomValue === 2) {
-            return ('scissors');
+    let computerRandom = Math.floor(Math.random() * gameValues.length);
+        if (computerRandom === 0) {
+            return computerSelection = 'rock';
+        } else if (computerRandom === 1) {
+            return computerSelection = 'paper';
+        } else if (computerRandom === 2) {
+            return computerSelection = 'scissors';
         }
     }
-
+// Takes input from the player
 function playerPlay() {
     let playerInput = prompt('Input "rock", "paper", or "scissors"')
-    let playerOutput = playerInput.toLowerCase();
-        if (playerOutput == 'rock' || playerOutput == 'paper' || playerOutput == 'scissors') {
-            return (playerOutput);
+    let playerSelection = playerInput.toLowerCase();
+        if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
+            computerPlay();
+            return (console.log('Player: ' + playerSelection)) + (console.log('Computer: ' + computerSelection));
         } else {
-            alert(`${playerOutput} is not a valid input. Please input "rock", "paper", or "scissors"`);
+            alert(`'${playerSelection}' is not a valid input. Please input "rock", "paper", or "scissors"`);
             playerPlay();
         }    
 }
 
+function runGame() {
+
+}
+
+
+playerPlay();
