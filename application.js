@@ -30,4 +30,14 @@ function computerPlay() {
         }
     }
 
-console.log(computerPlay());
+function playerPlay() {
+    let playerInput = prompt('Input "rock", "paper", or "scissors"')
+    let playerOutput = playerInput.toLowerCase();
+        if (playerOutput == 'rock' || playerOutput == 'paper' || playerOutput == 'scissors') {
+            return (playerOutput);
+        } else {
+            alert(`${playerOutput} is not a valid input. Please input "rock", "paper", or "scissors"`);
+            playerPlay();
+        }    
+}
+
