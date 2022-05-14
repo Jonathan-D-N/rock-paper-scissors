@@ -17,18 +17,20 @@
 // runGame compares values of inputs from both variables
 // declares a win , lose , or draw to the user based on input from playerSelection and computerSelection
 
+//global variables
 let playerPoint = (0);
 let computerPoint = (0);
 let draw = (0);
 let rounds = (1);
-
+//runs the game
+game();
 function game() {
     if (rounds <= 5) {
-        console.log(rounds);
         playerPlay();
     } else {
         declareWinner();
     }
+    // -- unused for now. Game will be re-written in a more efficient manner in the future to properly utilize a loop --
     // for(let i = 1; i <= 5; i++) {
     //     console.log(i)
     //     playerPlay();
@@ -85,7 +87,7 @@ function compareResults() {
         game();
     }
 }
-
+// Declares winner by comparing points
 function declareWinner() {
     if (playerPoint > computerPoint) {
         console.log('You win!')
