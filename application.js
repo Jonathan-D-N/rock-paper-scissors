@@ -17,6 +17,18 @@
 // runGame compares values of inputs from both variables
 // declares a win , lose , or draw to the user based on input from playerSelection and computerSelection
 
+let playerPoint = (0);
+let computerPoint = (0);
+let draw = (0);
+
+function game() {
+    for(let i = 1; i <= 5; i++) {
+        console.log(i)
+        playerPlay();
+        } 
+    }
+
+
 // Declares a random value, 'rock', 'paper', or 'scissors' for the computer player. Outputs the global variable: computerSelection
 function computerPlay() {
     let gameValues = ['rock', 'paper', 'scissors'];
@@ -40,21 +52,25 @@ function playerPlay() {
             //return console.log('Player: ' + playerSelection) + console.log('computer: ' + computerSelection);
         } else {
             console.log(`'${playerOutput}' is not a valid input. Please input "rock", "paper", or "scissors"`);
-            playerPlay();
+            
         }    
 }
-
+// compares results of playerSelection and computerSelection, outputs: computerPoint or playerPoint
 function compareResults() {
     ('rock' > 'scissors');
     ('scissors' > 'paper');
     ('paper' > 'rock');
     if (playerSelection > computerSelection){
-        return console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***You win!***');
+        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***You win!***');
+        playerPoint++
+        return
     } else if (playerSelection < computerSelection) {
-        return console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***You lose!***');
+        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***You lose!***');
+        computerPoint++
+        return
     } else {
         console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***Draw!***');
+        draw++
     }
 }
 
-playerPlay();
