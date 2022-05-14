@@ -20,12 +20,19 @@
 let playerPoint = (0);
 let computerPoint = (0);
 let draw = (0);
+let rounds = (1);
 
 function game() {
-    for(let i = 1; i <= 5; i++) {
-        console.log(i)
+    if (rounds <= 5) {
+        console.log(rounds);
         playerPlay();
-        } 
+    } else {
+        declareWinner();
+    }
+    // for(let i = 1; i <= 5; i++) {
+    //     console.log(i)
+    //     playerPlay();
+    //     } 
     }
 
 
@@ -61,16 +68,29 @@ function compareResults() {
     ('scissors' > 'paper');
     ('paper' > 'rock');
     if (playerSelection > computerSelection){
-        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***You win!***');
         playerPoint++
+        rounds++
+        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('You have ' + playerPoint + ' points') + console.log('Computer has ' + computerPoint + ' points');
+        game();
         return
     } else if (playerSelection < computerSelection) {
-        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***You lose!***');
         computerPoint++
+        rounds++
+        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('You have ' + playerPoint + ' points') + console.log('Computer has ' + computerPoint + ' points');
+        game();
         return
     } else {
         console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***Draw!***');
         draw++
+        game();
+    }
+}
+
+function declareWinner() {
+    if (playerPoint > computerPoint) {
+        console.log('You win!')
+    } else {
+        console.log('Computer wins!')
     }
 }
 
