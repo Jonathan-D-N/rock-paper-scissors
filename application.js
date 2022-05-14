@@ -17,7 +17,7 @@
 // runGame compares values of inputs from both variables
 // declares a win , lose , or draw to the user based on input from playerSelection and computerSelection
 
-// Declares a random value, 'rock', 'paper', or 'scissors' for the computer player.
+// Declares a random value, 'rock', 'paper', or 'scissors' for the computer player. Outputs the global variable: computerSelection
 function computerPlay() {
     let gameValues = ['rock', 'paper', 'scissors'];
     let computerRandom = Math.floor(Math.random() * gameValues.length);
@@ -29,22 +29,32 @@ function computerPlay() {
             return computerSelection = 'scissors';
         }
     }
-// Takes input from the player
+// Takes input from the player. Outputs the global variable: playerSelection
 function playerPlay() {
     let playerInput = prompt('Input "rock", "paper", or "scissors"')
     let playerOutput = playerInput.toLowerCase();
         if (playerOutput == 'rock' || playerOutput == 'paper' || playerOutput == 'scissors') {
             computerPlay();
             playerSelection = (playerOutput);
-            return console.log('Player: ' + playerSelection) + console.log('computer: ' + computerSelection);
+            return compareResults();
+            //return console.log('Player: ' + playerSelection) + console.log('computer: ' + computerSelection);
         } else {
-            alert(`'${playerOutput}' is not a valid input. Please input "rock", "paper", or "scissors"`);
+            console.log(`'${playerOutput}' is not a valid input. Please input "rock", "paper", or "scissors"`);
             playerPlay();
         }    
 }
 
 function compareResults() {
-
+    ('rock' > 'scissors');
+    ('scissors' > 'paper');
+    ('paper' > 'rock');
+    if (playerSelection > computerSelection){
+        return console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***You win!***');
+    } else if (playerSelection < computerSelection) {
+        return console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***You lose!***');
+    } else {
+        console.log('Player: ' + playerSelection) + console.log('Computer: ' + computerSelection) + console.log('***Draw!***');
+    }
 }
 
 playerPlay();
