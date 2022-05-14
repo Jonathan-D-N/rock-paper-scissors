@@ -35,7 +35,8 @@ function playerPlay() {
     let playerOutput = playerInput.toLowerCase();
         if (playerOutput == 'rock' || playerOutput == 'paper' || playerOutput == 'scissors') {
             computerPlay();
-            return (console.log('Player: ' + playerOutput)) + (console.log('Computer: ' + computerSelection));
+            playerSelection = (playerOutput);
+            return console.log('Player: ' + playerSelection) + console.log('computer: ' + computerSelection);
         } else {
             alert(`'${playerOutput}' is not a valid input. Please input "rock", "paper", or "scissors"`);
             playerPlay();
