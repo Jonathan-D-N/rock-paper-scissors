@@ -95,4 +95,3 @@ function declareWinner() {
         console.log('Computer wins!')
     }
 }
-
