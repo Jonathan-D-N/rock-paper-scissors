@@ -32,19 +32,18 @@ function computerPlay() {
 // Takes input from the player
 function playerPlay() {
     let playerInput = prompt('Input "rock", "paper", or "scissors"')
-    let playerSelection = playerInput.toLowerCase();
-        if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
+    let playerOutput = playerInput.toLowerCase();
+        if (playerOutput == 'rock' || playerOutput == 'paper' || playerOutput == 'scissors') {
             computerPlay();
-            return (console.log('Player: ' + playerSelection)) + (console.log('Computer: ' + computerSelection));
+            return (console.log('Player: ' + playerOutput)) + (console.log('Computer: ' + computerSelection));
         } else {
-            alert(`'${playerSelection}' is not a valid input. Please input "rock", "paper", or "scissors"`);
+            alert(`'${playerOutput}' is not a valid input. Please input "rock", "paper", or "scissors"`);
             playerPlay();
         }    
 }
 
-function runGame() {
+function compareResults() {
 
 }
-
 
 playerPlay();
