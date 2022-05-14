@@ -2,12 +2,10 @@
 
 //Pseudocode
 
-
-
 // Assign function: computerPlay 
 // computerPlay includes variables: rock , paper , scissors
 // function: computerPlay activates upon user input from the: playerPlay function
-// Opon user input computerPlay selects one of the three variables at random and returns the variable computerSelection
+// Upon user input computerPlay selects one of the three variables at random and returns the variable computerSelection
 
 // assign function: playerPlay
 // playerPlay includes variables: rock , paper , scissors
@@ -18,3 +16,18 @@
 // runGame includes variables: playerSelection , computerSelection
 // runGame compares values of inputs from both variables
 // declares a win , lose , or draw to the user based on input from playerSelection and computerSelection
+
+
+function computerPlay() {
+    let gameValues = ['rock', 'paper', 'scissors'];
+    let randomValue = Math.floor(Math.random() * gameValues.length);
+        if (randomValue === 0) {
+            return ('rock');
+        } else if (randomValue === 1) {
+            return ('paper');
+        } else if (randomValue === 2) {
+            return ('scissors');
+        }
+    }
+
+console.log(computerPlay());
