@@ -18,31 +18,30 @@ function playerPlay(computerSelection, playerSelection) {
     playerSelection = prompt('Input "rock", "paper", or "scissors"')
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerPlay().toLowerCase();
-    if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') { 
-        ('rock' > 'scissors');
-        ('paper' > 'rock');
-        ('scissors' > 'paper');
         if (computerSelection == playerSelection) {
-            console.log('Draw!');
+            console.log('Tie!');
             return (playerPlay());
-        } else if (computerSelection < playerSelection) {
+        }
+        //Computer win
+        else if (computerSelection == 'rock' && playerSelection == 'scissors' || computerSelection == 'paper' && playerSelection == 'rock' || computerSelection == 'scissors' && playerSelection == 'paper') {
             computerPoint = ++computerPoint;
             rounds = ++rounds;
             console.log('You lose! ' + computerSelection + ' beats ' + playerSelection + '!');
             console.log('Player Points: ', playerPoint);
             console.log('Computer Points: ', computerPoint);
-        } else {
+        //Player win
+        } else if (playerSelection == 'rock' && computerSelection == 'scissors' || playerSelection == 'paper' && computerSelection == 'rock' || playerSelection == 'scissors' && computerSelection == 'paper'){
             playerPoint = ++playerPoint;
             rounds = ++rounds;
             console.log('You win! ' + playerSelection + ' beats ' + computerSelection + '!');
             console.log('Player Points: ', playerPoint);
             console.log('Computer Points: ', computerPoint);
+        } else {
+            console.log(`${playerSelection } is not a valid input. Please input "rock", "paper", or "scissors"`)
+            return (playerPlay());
         }
-    } else {
-        console.log(`${playerSelection } is not a valid input. Please input "rock", "paper", or "scissors"`)
-        return (playerPlay());
-    }
-}
+    } 
+
 //runs the game until 5 rounds happen
 function game() {
     while (rounds <= 5) {
