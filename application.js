@@ -7,19 +7,19 @@ let playerSelection;
 let computerSelection;
 
 // Declares a random value, 'rock', 'paper', or 'scissors' for the computer player. Call using the computerPlay() function.
-const gameValues = ['rock', 'paper', 'scissors'];
+const gameValues = ['rock', 'paper', 'scissors']; 
 
 function computerPlay() {
     return gameValues[~~(Math.random() * gameValues.length)];
     }
 
 //Take player input, force lowercase, compare results, add points for winner and add to rounds variable, loop function if a draw is met.
-function playerPlay(computerSelection, playerSelection) {
+function playerPlay(computerSelection, playerSelection,) {
     playerSelection = prompt('Input "rock", "paper", or "scissors"')
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerPlay().toLowerCase();
         if (computerSelection == playerSelection) {
-            console.log('Tie!');
+            console.log('Draw!');
             return (playerPlay());
         }
         //Computer win
@@ -41,11 +41,10 @@ function playerPlay(computerSelection, playerSelection) {
             return (playerPlay());
         }
     } 
-
 //runs the game until 5 rounds happen
 function game() {
-    while (rounds <= 5) {
-        playerPlay();
+   while (playerPoint < (3) && computerPoint < (3)) {
+       playerPlay();
     }
 }
-game();
+game()
