@@ -8,8 +8,18 @@ const picks = ['rock', 'paper', 'scissors']
 
 
 //Begins the game. user inputer is stored on the first argument. Computer input is stored on the second argument.
-function runGame (playerInput, computerInput) {
-    playerInput = prompt ('Input "rock", "paper", or "scissors"');
+function runGame () {
+    userInput = prompt ('Input "rock", "paper", or "scissors"');
+    inputValidity()
+    function inputValidity() {
+        return userInput.toLowerCase ? "rock"
+                : userInput.toLowerCase ? "paper"
+                : userInput.toLowerCase ? "scissors"
+                : console.log('Invalid input. Input "rock", "paper", or "scissors"'), runGame();
+    }
+
+    //const inputValidity = userInput.toLowerCase == "rock" || userInput.toLowerCase == "paper" || userInput.toLowerCase == "scissors" ? computerChoice() : console.log('Invalid input. Input "rock", "paper", or "scissors"');
+
     //runs the computerChoice function, passing the 'picks' variable as the argument. The function will randomize that variable (array) and return 1 randomized output.
     computerChoice(picks)
     //This function runs the Durstenfeld shuffle to shuffle the array. I'm then calling the array position 0 which will be compared to userinput.
