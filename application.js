@@ -22,8 +22,12 @@ function runGame () {
                 : userInput == "paper" ? console.log(userInput)
                 : userInput == "scissors" ? console.log(userInput)
                 : invalidInput())
-    }
-
+    //}
+    //const results = [
+    //    ['W', 'L', 'T'],
+    //    ['T', 'W', 'L'],
+    //    ['L', 'T', 'W'],
+    //];
     //runs the computerChoice function, passing the 'picks' variable as the argument. The function will randomize that variable (array) and return 1 randomized output.
     computerChoice(picks)
     //This function runs the Durstenfeld shuffle to shuffle the array. I'm then calling the array position 0 which will be compared to userinput.
@@ -35,12 +39,5 @@ function runGame () {
             array[i] = array[j];
             array[j] = temp;
         } //console.log (array[0])
-//brainstorm ways to compare userinput and computerinput without if else statements.
-
     }
-}
-
-
-//Function that prompts the player for input. Once correct input is received, runs the game.
-//    This function calls the picks variable and randomizes it to pick the computer play
-//      
+}}
