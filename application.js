@@ -1,5 +1,6 @@
 const picks = ['rock', 'paper', 'scissors']
 //User Choice
+function game() {
 let userInput = prompt('Input "rock", "paper", or "scissors"').toLowerCase();
 let userInputIndex = picks.indexOf(userInput);
 
@@ -16,8 +17,6 @@ console.log(`You picked ${userInput}, the computer picked ${computerChoice}`);
         ['L', 'T', 'W'],
         ['W', 'L', 'T'],
     ];
-    console.log(results);
-//
 let userResult = results[randomNum][userInputIndex];
 //console.log('UserResult',userResult)
 
@@ -27,3 +26,5 @@ const resultMap = {
     'L': "You lose"
 };
 console.log(resultMap[userResult]);
+
+}
