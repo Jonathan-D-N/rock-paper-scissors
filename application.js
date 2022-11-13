@@ -7,18 +7,22 @@ const picks = ['rock', 'paper', 'scissors']
 //3rd function will take argument 1 and 2 and compare them. Once compared, it will console.log the winner.
 
 
-//Begins the game. user inputer is stored on the first argument. Computer input is stored on the second argument.
+//Begins the game. Prompts for userInput and forces lower case, then runs InputValidity function.
 function runGame () {
-    userInput = prompt ('Input "rock", "paper", or "scissors"');
+    userInput = prompt('Input "rock", "paper", or "scissors"').toLowerCase();
     inputValidity()
+    //Conditional branching to determine valid input. If no valid input, run  the game again.
     function inputValidity() {
-        return userInput.toLowerCase ? "rock"
-                : userInput.toLowerCase ? "paper"
-                : userInput.toLowerCase ? "scissors"
-                : console.log('Invalid input. Input "rock", "paper", or "scissors"'), runGame();
+        //If input is invalid, inform user and run the game again.
+        function invalidInput() {
+            console.log(`${userInput} is not a valid input. Please type "rock", "paper", or "scissors"`)
+            runGame()
+        }
+        (userInput == "rock" ? console.log(userInput)
+                : userInput == "paper" ? console.log(userInput)
+                : userInput == "scissors" ? console.log(userInput)
+                : invalidInput())
     }
-
-    //const inputValidity = userInput.toLowerCase == "rock" || userInput.toLowerCase == "paper" || userInput.toLowerCase == "scissors" ? computerChoice() : console.log('Invalid input. Input "rock", "paper", or "scissors"');
 
     //runs the computerChoice function, passing the 'picks' variable as the argument. The function will randomize that variable (array) and return 1 randomized output.
     computerChoice(picks)
@@ -30,7 +34,7 @@ function runGame () {
             let temp = array[i];
             array[i] = array[j];
             array[j] = temp;
-        } console.log (array[0])
+        } //console.log (array[0])
 //brainstorm ways to compare userinput and computerinput without if else statements.
 
     }
