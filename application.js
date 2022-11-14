@@ -1,8 +1,19 @@
 const picks = ['rock', 'paper', 'scissors']
-//User Choice
-function game() {
-let userInput = prompt('Input "rock", "paper", or "scissors"').toLowerCase();
-let userInputIndex = picks.indexOf(userInput);
+let userInput = ('')
+let userInputIndex = ('')
+//begins the game
+function gameRound() {
+//Takes user input and indexes it.
+    userInput = prompt('Input "rock", "paper", or "scissors"').toLowerCase();
+    userInputIndex = picks.indexOf(userInput);
+//Validates that the user inputs a valid prompt, restarts game if not.
+    validateUserInput();
+    function validateUserInput() {
+        if (userInputIndex == -1) {
+            console.log(`${userInput} is not a valid input. Please enter "rock", "paper", or "scissors"`)
+            gameRound();
+        } 
+    }
 
 //Computer choice
 let randomNum = Math.floor(Math.random() * 3);
@@ -11,20 +22,21 @@ let computerChoice = picks[randomNum];
 //Log choices to the console
 console.log(`You picked ${userInput}, the computer picked ${computerChoice}`);
 
-//2D array
+//Multidimensional array to store and track results. T = Tie, W = Win, L = Loss.
     const results = [
         ['T', 'W', 'L'],
         ['L', 'T', 'W'],
         ['W', 'L', 'T'],
     ];
+//Determines user and computer results. RandomNum is the computer result (up/down), userInputIndex is the user result (left/right)
 let userResult = results[randomNum][userInputIndex];
-//console.log('UserResult',userResult)
 
 const resultMap = {
-    'T': "Tie",
-    'W': "You win",
-    'L': "You lose"
+    'T': "It's a tie!",
+    'W': "You win!",
+    'L': "You lose!"
 };
-console.log(resultMap[userResult]);
+console.log("results map: ",resultMap)
+return(resultMap[userResult]);
 
 }
