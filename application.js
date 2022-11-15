@@ -1,6 +1,12 @@
 const picks = ['rock', 'paper', 'scissors']
 let userInput = ('')
 let userInputIndex = ('')
+let userScore = (0)
+let computerScore = (0)
+let rounds = (0)
+for (; rounds < 3; rounds++) {
+    gameRound()
+}
 //begins the game
 function gameRound() {
 //Takes user input and indexes it.
@@ -11,7 +17,7 @@ function gameRound() {
     function validateUserInput() {
         if (userInputIndex == -1) {
             console.log(`${userInput} is not a valid input. Please enter "rock", "paper", or "scissors"`)
-            gameRound();
+            return
         } 
     }
 
@@ -30,13 +36,15 @@ console.log(`You picked ${userInput}, the computer picked ${computerChoice}`);
     ];
 //Determines user and computer results. RandomNum is the computer result (up/down), userInputIndex is the user result (left/right)
 let userResult = results[randomNum][userInputIndex];
-
+//Decreases rounds loop if there's a tie. The goal is best 2 out of 3.
+if (userResult == 'T') {
+    rounds--
+}
 const resultMap = {
     'T': "It's a tie!",
     'W': "You win!",
     'L': "You lose!"
 };
-console.log("results map: ",resultMap)
+console.log(resultMap[userResult]);
 return(resultMap[userResult]);
-
 }
