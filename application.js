@@ -4,29 +4,37 @@ let userInputIndex = ('')
 let userScore = (0)
 let computerScore = (0)
 let rounds = (0)
-for (; rounds < 3; rounds++) {
-    gameRound()
-}
-//begins the game
+//for (; rounds < 3; rounds++) {
+//    gameRound()
+//}
+
+
+const btn = document.querySelectorAll('button');
+btn.forEach((button) => {
+    button.addEventListener('click', () => {
+        userInput = (button.className);
+        gameRound()
+        return(userInput);
+    });
+});
+
+
+
 function gameRound() {
 //Takes user input and indexes it.
-    userInput = prompt('Input "rock", "paper", or "scissors"').toLowerCase();
     userInputIndex = picks.indexOf(userInput);
-//Validates that the user inputs a valid prompt, restarts game if not.
-    validateUserInput();
-    function validateUserInput() {
-        if (userInputIndex == -1) {
-            console.log(`${userInput} is not a valid input. Please enter "rock", "paper", or "scissors"`)
-            return
-        } 
-    }
+    console.log("userInput Index: ", userInputIndex);
 
 //Computer choice
 let randomNum = Math.floor(Math.random() * 3);
 let computerChoice = picks[randomNum];
 
 //Log choices to the console
-console.log(`You picked ${userInput}, the computer picked ${computerChoice}`);
+
+//console.log(`You picked ${userInput}, the computer picked ${computerChoice}`);
+
+const user = document.querySelector('.playerChoice')
+user.textContent = `Player Choice: ${userInput}`
 
 //Multidimensional array to store and track results. T = Tie, W = Win, L = Loss.
     const results = [
