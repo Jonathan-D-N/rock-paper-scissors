@@ -1,40 +1,40 @@
-const picks = ['rock', 'paper', 'scissors']
-let userInput = ('')
-let userInputIndex = ('')
-let userScore = (0)
+let playerScore = (0)
 let computerScore = (0)
-let rounds = (0)
-//for (; rounds < 3; rounds++) {
-//    gameRound()
-//}
 
-
+//Output userInput from button click
 const btn = document.querySelectorAll('button');
 btn.forEach((button) => {
     button.addEventListener('click', () => {
         userInput = (button.className);
-        gameRound()
+        game()
         return(userInput);
     });
 });
 
+//function endGame() {
+//    const btn = document.querySelectorAll('button');
+//    btn.forEach((button) => {
+//        button.removeEventListener('click', () => {
+//            userInput = (button.className);
+//            game()
+//            return(userInput);
+//        });
+//    });
+//}
 
-
-function gameRound() {
-//Takes user input and indexes it.
-    userInputIndex = picks.indexOf(userInput);
-    console.log("userInput Index: ", userInputIndex);
+function game() {
+    const choices = ['rock', 'paper', 'scissors']
+//Takes user input and gets index of choices variable.
+    userInputIndex = choices.indexOf(userInput);
 
 //Computer choice
 let randomNum = Math.floor(Math.random() * 3);
-let computerChoice = picks[randomNum];
-
-//Log choices to the console
-
-//console.log(`You picked ${userInput}, the computer picked ${computerChoice}`);
-
-const user = document.querySelector('.playerChoice')
+let computerChoice = choices[randomNum];
+//
+const user = document.querySelector('.playerChoice');
 user.textContent = `Player Choice: ${userInput}`
+const Computer = document.querySelector('.computerChoice');
+Computer.textContent = `Computer Choice: ${computerChoice}`
 
 //Multidimensional array to store and track results. T = Tie, W = Win, L = Loss.
     const results = [
@@ -44,15 +44,28 @@ user.textContent = `Player Choice: ${userInput}`
     ];
 //Determines user and computer results. RandomNum is the computer result (up/down), userInputIndex is the user result (left/right)
 let userResult = results[randomNum][userInputIndex];
-//Decreases rounds loop if there's a tie. The goal is best 2 out of 3.
-if (userResult == 'T') {
-    rounds--
+//Determine and display score
+if (userResult == 'W') {
+    ++playerScore
+    const playerScoreDisplay = document.querySelector('.playerScore');
+    playerScoreDisplay.textContent = `Player Score: ${playerScore}`
+} else if (userResult == 'L') {
+    ++computerScore
+    const computerScoreDisplay = document.querySelector('.computerScore');
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`
 }
+
 const resultMap = {
     'T': "It's a tie!",
     'W': "You win!",
     'L': "You lose!"
 };
-console.log(resultMap[userResult]);
-return(resultMap[userResult]);
+//displays Tie/Win/Loss
+const roundResult = document.querySelector('.results');
+roundResult.textContent = `Results: ${resultMap[userResult]}`
+
+if (playerScore >= 3 || computerScore >= 3) {
+    
+}
+
 }
