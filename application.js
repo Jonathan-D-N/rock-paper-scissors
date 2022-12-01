@@ -2,25 +2,15 @@ let playerScore = (0)
 let computerScore = (0)
 
 //Output userInput from button click
+
 const btn = document.querySelectorAll('button');
 btn.forEach((button) => {
-    button.addEventListener('click', () => {
+        button.addEventListener('click', () => {
         userInput = (button.className);
         game()
-        return(userInput);
+        return(userInput); 
     });
 });
-
-//function endGame() {
-//    const btn = document.querySelectorAll('button');
-//    btn.forEach((button) => {
-//        button.removeEventListener('click', () => {
-//            userInput = (button.className);
-//            game()
-//            return(userInput);
-//        });
-//    });
-//}
 
 function game() {
     const choices = ['rock', 'paper', 'scissors']
@@ -63,9 +53,4 @@ const resultMap = {
 //displays Tie/Win/Loss
 const roundResult = document.querySelector('.results');
 roundResult.textContent = `Results: ${resultMap[userResult]}`
-
-if (playerScore >= 3 || computerScore >= 3) {
-    
-}
-
 }
