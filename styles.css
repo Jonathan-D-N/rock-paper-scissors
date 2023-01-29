@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+}
+.container .instructionsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 15vh;
+}
+.container .instructionsContainer > h2 {
+  flex: 2;
+}
+.container .instructionsContainer > h3 {
+  flex: 1;
+}
+.container .instructionsContainer > * {
+  margin: 0;
+}
+.container .gameContainer {
+  width: 650px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .gameContainer > button {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(50, 50, 50);
+  -webkit-box-shadow: 10px 10px 5px -8px rgb(0, 0, 0);
+  -moz-box-shadow: 10px 10px 5px -8px rgb(0, 0, 0);
+  box-shadow: 10px 10px 5px -8px rgb(0, 0, 0);
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+  height: 200px;
+}
+.container button:hover {
+  transition: 10ms;
+  transform: rotate(2deg);
+}
+.container button:active {
+  box-shadow: inset 2px 2px 9px -4px rgb(0, 0, 0);
+}
+
+/*# sourceMappingURL=styles.css.map */
