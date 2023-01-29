@@ -1,13 +1,13 @@
 html {
-  font-family: "Aboreto", cursive;
+  font-family: cursive;
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
 }
 
 body {
-  background-color: rgb(34, 34, 34);
-  color: rgb(255, 255, 255);
+  background-color: #1c1917;
+  color: #a8a29e;
   margin: 0;
   width: 100%;
   height: 100%;
@@ -16,34 +16,39 @@ body {
 }
 
 .container {
+  width: 45vw;
   display: grid;
   place-items: center;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 .container .instructionsContainer {
+  grid-row: 1/2;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 15vh;
 }
-.container .instructionsContainer > h2 {
+.container .instructionsContainer h2 {
   flex: 2;
 }
-.container .instructionsContainer > h3 {
+.container .instructionsContainer h3 {
   flex: 1;
 }
-.container .instructionsContainer > * {
+.container .instructionsContainer * {
   margin: 0;
 }
 .container .gameContainer {
-  width: 650px;
+  grid-row: 2/3;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .container .gameContainer > button {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  background-color: rgb(50, 50, 50);
+  background-color: #292524;
   -webkit-box-shadow: 10px 10px 5px -8px rgb(0, 0, 0);
   -moz-box-shadow: 10px 10px 5px -8px rgb(0, 0, 0);
   box-shadow: 10px 10px 5px -8px rgb(0, 0, 0);
@@ -52,33 +57,24 @@ body {
   width: 200px;
   height: 200px;
 }
-.container button:hover {
+.container .gameContainer button:hover {
   transition: 10ms;
-  transform: rotate(2deg);
+  transform: scale(101%);
 }
-.container button:active {
-  box-shadow: inset 2px 2px 9px -4px rgb(0, 0, 0);
+.container .gameContainer button:active {
+  box-shadow: 10px 10px 5px -10px rgb(0, 0, 0);
+  transition: 10ms;
+  transform: scale(99%);
 }
 .container .menu {
-  width: 600px;
+  grid-row: 3/4;
+  width: 100%;
   margin-top: 2rem;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto;
-  place-items: center;
+  display: flex;
+  justify-content: space-around;
 }
-.container .menu > div > button {
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  background-color: rgb(50, 50, 50);
-  -webkit-box-shadow: 10px 10px 5px -8px rgb(0, 0, 0);
-  -moz-box-shadow: 10px 10px 5px -8px rgb(0, 0, 0);
-  box-shadow: 10px 10px 5px -8px rgb(0, 0, 0);
-  border-radius: 10px;
-  border: none;
+.container .menu > * {
   width: 200px;
-  height: 200px;
 }
 .container .menu > div {
   display: flex;
@@ -87,6 +83,20 @@ body {
 }
 .container .menu > div h2 {
   flex: 1;
+}
+.container .menu div > img {
+  cursor: pointer;
+  border: none;
+  transition: 250ms ease-in-out;
+  display: flex;
+  justify-content: center;
+}
+.container .menu img:hover {
+  transform: scale(110%) rotate(360deg);
+}
+.container .menu img:active {
+  transform: scale(0%) rotate(720deg);
+  opacity: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

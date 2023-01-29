@@ -1,10 +1,10 @@
-$primary-color: rgb(34, 34, 34);
-$secondary-color: rgb(50, 50, 50);
-$primary-text-color: rgb(255, 255, 255);
+$primary-color: #1c1917;
+$secondary-color: #292524;
+$primary-text-color: #a8a29e;
 $box-shadow-color: rgb(0, 0, 0);
 
 html {
-    font-family: 'Aboreto', cursive;
+    font-family: cursive;
     box-sizing: border-box;
     height: 100vh;
     width: 100vw;
@@ -21,78 +21,89 @@ body {
 }
 
 .container {
+    width: 45vw;
     display: grid;
     place-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr;
     
     .instructionsContainer {
+        grid-row: 1/2;
         display: flex;
         flex-direction: column;
         align-items: center;
         min-height: 15vh;
-    }
-    .instructionsContainer > h2 {
-        flex: 2;
-    }
-    .instructionsContainer > h3 {
-        flex: 1;
-    }
-    .instructionsContainer > * {
-        margin: 0;
-    }
-    .gameContainer {
-        width: 650px;
-        display: flex;
-        justify-content: space-between;
-    }
-    .gameContainer > button {
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        background-color: $secondary-color;
-        -webkit-box-shadow: 10px 10px 5px -8px $box-shadow-color;
-        -moz-box-shadow: 10px 10px 5px -8px $box-shadow-color;
-        box-shadow: 10px 10px 5px -8px $box-shadow-color;
-        border-radius: 10px;
-        border: none;
-        width: 200px;
-        height: 200px;
-    }
-    button:hover {
-        transition: 10ms;
-        transform: rotate(2deg);
-    }
-    button:active {
-        box-shadow: inset 2px 2px 9px -4px $box-shadow-color;
-    }
-    .menu {
-        width: 600px;
-        margin-top: 2rem;
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto;
-        place-items: center;
-    }
-
-    .menu > div > button {
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        background-color: $secondary-color;
-        -webkit-box-shadow: 10px 10px 5px -8px $box-shadow-color;
-        -moz-box-shadow: 10px 10px 5px -8px $box-shadow-color;
-        box-shadow: 10px 10px 5px -8px $box-shadow-color;
-        border-radius: 10px;
-        border: none;
-        width: 200px;
-        height: 200px;
-    }
-
-    .menu > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         h2 {
+            flex: 2;
+        }
+        h3 {
             flex: 1;
         }
+        * {
+            margin: 0;
+        }
+    }
+
+    .gameContainer {
+        grid-row: 2/3;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+            > button {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background-color: $secondary-color;
+            -webkit-box-shadow: 10px 10px 5px -8px $box-shadow-color;
+            -moz-box-shadow: 10px 10px 5px -8px $box-shadow-color;
+            box-shadow: 10px 10px 5px -8px $box-shadow-color;
+            border-radius: 10px;
+            border: none;
+            width: 200px;
+            height: 200px;
+        }
+        button:hover {
+            transition: 10ms;
+            transform: scale(101%);
+        }
+        button:active {
+            box-shadow: 10px 10px 5px -10px $box-shadow-color;
+            transition: 10ms;
+            transform: scale(99%);
+        }
+    }
+
+    .menu {
+        grid-row: 3/4;
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-around;
+            > * {
+                width: 200px;
+            }
+            > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h2 {
+                    flex: 1;
+                }
+            }
+            div > img {
+                cursor: pointer;
+                border: none;
+                transition: 250ms ease-in-out;
+                display: flex;
+                justify-content: center;
+            }
+            img:hover {
+                transform: scale(110%) rotate(360deg);
+            }
+    
+            img:active {
+                transform: scale(0%) rotate(720deg);
+                opacity: 0;
+            }
     }
 }
