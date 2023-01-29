@@ -4,6 +4,7 @@ $primary-text-color: rgb(255, 255, 255);
 $box-shadow-color: rgb(0, 0, 0);
 
 html {
+    font-family: 'Aboreto', cursive;
     box-sizing: border-box;
     height: 100vh;
     width: 100vw;
@@ -62,5 +63,36 @@ body {
     }
     button:active {
         box-shadow: inset 2px 2px 9px -4px $box-shadow-color;
+    }
+    .menu {
+        width: 600px;
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+        place-items: center;
+    }
+
+    .menu > div > button {
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        background-color: $secondary-color;
+        -webkit-box-shadow: 10px 10px 5px -8px $box-shadow-color;
+        -moz-box-shadow: 10px 10px 5px -8px $box-shadow-color;
+        box-shadow: 10px 10px 5px -8px $box-shadow-color;
+        border-radius: 10px;
+        border: none;
+        width: 200px;
+        height: 200px;
+    }
+
+    .menu > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            flex: 1;
+        }
     }
 }
