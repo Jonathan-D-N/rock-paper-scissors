@@ -75,6 +75,9 @@ body {
             transform: scale(99%);
         }
     }
+    .gameContainer img {
+        filter: drop-shadow(5px 5px 10px $primary-color);
+    }
 
     .menu {
         grid-row: 3/4;
