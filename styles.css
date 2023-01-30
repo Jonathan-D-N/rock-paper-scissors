@@ -15,7 +15,79 @@ body {
   place-items: center;
 }
 
+.play {
+  position: absolute;
+}
+
+.play > svg {
+  cursor: pointer;
+}
+
+#dark1, #light1, #dark2 {
+  transition: all 1s ease;
+}
+
+#PLAY {
+  transition: all 1.3s ease;
+}
+
+#dark2 {
+  transform: translateX(-100%);
+}
+
+#PLAY {
+  transform: translateX(-100%);
+}
+
+.play > svg:hover #PLAY {
+  transform: translateX(0%);
+}
+
+.play > svg:hover #light1 {
+  transform: translateX(20%);
+}
+
+.play > svg:hover #dark1 {
+  transform: translateX(40%);
+  opacity: 0;
+}
+
+.play > svg:hover #dark2 {
+  transform: translateX(0%);
+}
+
+.fadingEffect {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1c1917;
+  box-shadow: 7px 0px 6px -1px rgba(28, 25, 23, 0.75);
+  -moz-animation: showHide 2s ease-in; /* Firefox */
+  -webkit-animation: showHide 2s ease-in; /* Safari and Chrome */
+  -ms-animation: showHide 2s ease-in; /* IE10 */
+  -o-animation: showHide 2s ease-in; /* Opera */
+  animation: showHide 2s ease-in;
+}
+
+@keyframes showHide {
+  0% {
+    width: 0%;
+  }
+  40% {
+    width: 0%;
+  }
+  60% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 .container {
+  transform: translateX(-500%);
+  opacity: 0;
   width: 45vw;
   display: grid;
   place-items: center;
@@ -92,11 +164,11 @@ body {
   justify-content: center;
 }
 .container .menu img:hover {
-  transform: scale(110%) rotate(360deg);
+  transform: scale(110%) rotate(180deg);
 }
 .container .menu img:active {
-  transform: scale(0%) rotate(720deg);
-  opacity: 0;
+  transition: 250ms;
+  transform: scale(100%) rotate(720deg);
 }
 
 /*# sourceMappingURL=styles.css.map */
