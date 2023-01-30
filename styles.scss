@@ -35,17 +35,65 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         min-height: 15vh;
         h2 {
-            flex: 2;
-        }
-        h3 {
-            flex: 1;
+            transform: scale(130%) translateY(100%);
+            overflow: hidden;
+            border-right: .35rem solid $primary-text-color;
+            margin-top: .25rem solid $primary-color;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15rem;
+            animation-name: typing, blink-caret, move;
+            animation-duration: 3000ms, 750ms, 1200ms;
+            animation-delay: 0ms, 0ms, 3000ms;
+            animation-timing-function: steps(19, end), step-end, ease-out;
+            animation-iteration-count: 1, infinite, 1;
         }
         * {
             margin: 0;
         }
+
+        .instructions {
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #instructionsAnimate {
+            opacity: 100% !important;
+            overflow: hidden;
+            margin-top: .25rem solid $primary-color;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15rem;
+            animation: typing;
+            animation-duration: 1000ms;
+            animation-timing-function: steps(20, end);
+            animation-iteration-count: 1;
+        }
     }
+
+    @keyframes move {
+        from {
+            transform: scale(130%) translateY(100%);
+        }
+        to {
+            transform: scale(100%) translateY(0%);
+        }
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+    
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: $primary-text-color; }
+      }
 
     .gameContainer {
         grid-row: 2/3;
@@ -114,13 +162,29 @@ body {
     }
 }
 /********************
-Animations on hover
+Play Animation on hover
 ********************/
-.play {
+// animation-name: typing, blink-caret, move;
+// animation-duration: 3000ms, 750ms, 1500ms;
+// animation-delay: 0ms, 0ms, 3000ms;
+// animation-timing-function: steps(19, end), step-end, ease-in;
+// animation-iteration-count: 1, infinite, 1;
+.hover {
     position: absolute;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1200ms;
+    animation-delay: 3000ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0%;}
+        to {opacity: 100%;}
     }
     
-    .play > svg {
+    .hover > svg {
         cursor: pointer;
     }
     
@@ -140,39 +204,37 @@ Animations on hover
         transform: translateX(-100%);
     }
     
-    .play > svg:hover #PLAY {
+    .hover > svg:hover #PLAY {
         transform: translateX(0%)
     }
     
-    .play > svg:hover #light1 {
+    .hover > svg:hover #light1 {
         transform: translateX(20%);
     }
     
-    .play > svg:hover #dark1 {
+    .hover > svg:hover #dark1 {
         transform: translateX(40%);
         opacity: 0;
     }
     
-    .play > svg:hover #dark2 {
+    .hover > svg:hover #dark2 {
         transform: translateX(0%)
     }
 /**************
-Animations on click
+Play Animation on click
 **************/
-.container {
-    opacity: 0;
-    scale: 80%;
-}
 
 #containerAppear {
     transition: 3s;
-    scale: 100%;
-    opacity: 100%;
+    scale: 100% !important;
+    opacity: 100% !important;
 }
 
 .animations {
     position: absolute;
     display: grid;
+    place-items: center;
+    transform: translateX(25%);
 }
 
 .onClickAnimation > * {
@@ -215,5 +277,25 @@ Animations on click
 }
 
 #playVanish {
-    opacity: 0;
+    opacity: 0 !important;
 }
+
+/***********
+Container animations
+***********/
+// .container > * {
+    
+// }
+
+// .container .instructionsContainer .title {
+//     flex: 1;
+//     overflow: hidden;
+//     border-right: .15rem solid $primary-text-color;
+//     white-space: nowrap;
+//     margin: 0 auto;
+//     letter-spacing: .15rem;
+//     animation: 
+//     typing 3s steps(19, end),
+//     blink-caret .75s step-end infinite;
+// }
+
