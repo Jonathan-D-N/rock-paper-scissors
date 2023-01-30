@@ -36,25 +36,25 @@ clickableElement.onclick = () => {
         instructionsElement.setAttribute("id", 'instructionsAnimate')
         container.setAttribute("id", "containerAppear");
         container.append(gameContainer)
-     }, 200);
-     setTimeout(() => {
-        rock.setAttribute("id", "rock")
      }, 500);
      setTimeout(() => {
-        player.setAttribute("id", "player")
-     }, 650);
-     setTimeout(() => {
-        paper.setAttribute("id", "paper")
+        rock.setAttribute("id", "rock")
      }, 800);
      setTimeout(() => {
-        reset.setAttribute("id", "reset")
+        player.setAttribute("id", "player")
      }, 950);
      setTimeout(() => {
-        scissors.setAttribute("id", "scissors")
+        paper.setAttribute("id", "paper")
      }, 1100);
      setTimeout(() => {
-        computer.setAttribute("id", "computer")
+        reset.setAttribute("id", "reset")
      }, 1250);
+     setTimeout(() => {
+        scissors.setAttribute("id", "scissors")
+     }, 1400);
+     setTimeout(() => {
+        computer.setAttribute("id", "computer")
+     }, 1550);
 }
 //Adjust Rock Paper Scissors title text
 moveText()
