@@ -121,7 +121,20 @@ body {
   transform: scale(99%);
 }
 .container .gameContainer img {
-  filter: drop-shadow(5px 5px 10px #1c1917);
+  filter: drop-shadow(5px 5px 2px #1c1917);
+}
+.container .gameContainer > * {
+  opacity: 0;
+  scale: 20%;
+}
+.container .menu > * {
+  opacity: 0;
+  scale: 20%;
+}
+.container #rock, .container #paper, .container #scissors, .container #player, .container #reset, .container #computer {
+  transition: 1s ease-in-out;
+  scale: 100%;
+  opacity: 100%;
 }
 .container .menu {
   grid-row: 3/4;
@@ -193,14 +206,6 @@ Play Animation on hover
   transform: translateX(-100%);
 }
 
-#PLAY {
-  transform: translateX(-100%);
-}
-
-.hover > svg:hover #PLAY {
-  transform: translateX(0%);
-}
-
 .hover > svg:hover #light1 {
   transform: translateX(20%);
 }
@@ -215,7 +220,7 @@ Play Animation on hover
 }
 
 /**************
-Play Animation on click
+Play Button Animation On Click
 **************/
 #containerAppear {
   transition: 3s;
@@ -268,13 +273,5 @@ Play Animation on click
   transform: translateX(60%);
   opacity: 0;
 }
-
-#playVanish {
-  opacity: 0 !important;
-}
-
-/***********
-Container animations
-***********/
 
 /*# sourceMappingURL=styles.css.map */

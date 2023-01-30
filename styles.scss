@@ -122,10 +122,26 @@ body {
             transition: 10ms;
             transform: scale(99%);
         }
-    }
-    .gameContainer img {
-        filter: drop-shadow(5px 5px 10px $primary-color);
-    }
+        }
+        .gameContainer img {
+            filter: drop-shadow(5px 5px 2px $primary-color);
+        }
+
+        .gameContainer > * {
+            opacity: 0;
+            scale: 20%;
+        }
+
+        .menu > * {
+            opacity: 0;
+            scale: 20%;
+        }
+
+        #rock, #paper, #scissors, #player, #reset, #computer {
+            transition: 1s ease-in-out;
+            scale: 100%;
+            opacity: 100%;
+        }
 
     .menu {
         grid-row: 3/4;
@@ -199,15 +215,7 @@ Play Animation on hover
     #dark2 {
         transform: translateX(-100%);
     }
-    
-    #PLAY {
-        transform: translateX(-100%);
-    }
-    
-    .hover > svg:hover #PLAY {
-        transform: translateX(0%)
-    }
-    
+
     .hover > svg:hover #light1 {
         transform: translateX(20%);
     }
@@ -221,7 +229,7 @@ Play Animation on hover
         transform: translateX(0%)
     }
 /**************
-Play Animation on click
+Play Button Animation On Click
 **************/
 
 #containerAppear {
@@ -275,27 +283,3 @@ Play Animation on click
     transform: translateX(60%);
     opacity: 0;
 }
-
-#playVanish {
-    opacity: 0 !important;
-}
-
-/***********
-Container animations
-***********/
-// .container > * {
-    
-// }
-
-// .container .instructionsContainer .title {
-//     flex: 1;
-//     overflow: hidden;
-//     border-right: .15rem solid $primary-text-color;
-//     white-space: nowrap;
-//     margin: 0 auto;
-//     letter-spacing: .15rem;
-//     animation: 
-//     typing 3s steps(19, end),
-//     blink-caret .75s step-end infinite;
-// }
-
