@@ -113,12 +113,12 @@ body {
   height: 200px;
 }
 .container .gameContainer button:hover {
-  transition: 10ms;
+  transition: 10ms !important;
   transform: scale(101%);
 }
 .container .gameContainer button:active {
   box-shadow: 10px 10px 5px -10px rgb(0, 0, 0);
-  transition: 10ms;
+  transition: 10ms !important;
   transform: scale(99%);
 }
 .container .gameContainer img {
@@ -155,23 +155,18 @@ body {
 .container .menu > div h2 {
   flex: 1;
 }
-.container .menu div > img {
+.container .menu .reset {
   cursor: pointer;
   border: none;
-  transition: 250ms ease-in-out;
   display: flex;
   justify-content: center;
 }
-.container .menu img:hover {
-  transform: scale(110%) rotate(180deg);
-}
-.container .menu img:active {
-  transition: 250ms;
-  transform: scale(100%) rotate(720deg);
+.container .menu .reset:hover {
+  transform: scale(105%);
 }
 
 /********************
-Play Animation on hover
+Play Triangle Animation on hover
 ********************/
 .hover {
   position: absolute;
@@ -221,7 +216,7 @@ Play Animation on hover
 }
 
 /**************
-Play Button Animation On Click
+Play Triangle Animation On Click
 **************/
 #containerAppear {
   transition: 3s;

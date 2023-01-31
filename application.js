@@ -47,6 +47,7 @@ clickableElement.onclick = () => {
         paper.setAttribute("id", "paper")
      }, 1100);
      setTimeout(() => {
+        reset.style.transition = "all 1000ms ease-in"
         reset.setAttribute("id", "reset")
      }, 1250);
      setTimeout(() => {
@@ -55,6 +56,9 @@ clickableElement.onclick = () => {
      setTimeout(() => {
         computer.setAttribute("id", "computer")
      }, 1550);
+     setTimeout(() => {
+      reset.style.transition = "50ms"
+   }, 2250);
 }
 //Adjust Rock Paper Scissors title text
 moveText()
@@ -65,4 +69,20 @@ function moveText() {
         text.style.transform = "scale(100%)";
         clickableElement.style.opacity = "100";
      }, 4200);
+}
+
+//Reset button
+const resetImage = document.querySelector('.resetImage')
+
+// resetImage.addEventListener('mouseover', (e) => {
+//    resetImage.style.transform = "scale(105%)"
+// })
+
+resetImage.onclick = () => {
+   resetImage.style.transition = "all 250ms ease-in"
+   resetImage.style.transform = `rotate(360deg)`;
+   setTimeout(() => {
+      resetImage.style.transition = "all 0ms ease-in-out"
+      resetImage.style.transform = `rotate(0deg)`;
+   }, 250);
 }

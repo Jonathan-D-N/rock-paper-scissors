@@ -115,12 +115,12 @@ body {
             height: 200px;
         }
         button:hover {
-            transition: 10ms;
+            transition: 10ms !important;
             transform: scale(101%);
         }
         button:active {
             box-shadow: 10px 10px 5px -10px $box-shadow-color;
-            transition: 10ms;
+            transition: 10ms !important;
             transform: scale(99%);
         }
         }
@@ -161,31 +161,20 @@ body {
                     flex: 1;
                 }
             }
-            div > img {
+            .reset {
                 cursor: pointer;
                 border: none;
-                transition: 250ms ease-in-out;
                 display: flex;
                 justify-content: center;
             }
-            img:hover {
-                transform: scale(110%) rotate(180deg);
-            }
-    
-            img:active {
-                transition: 250ms;
-                transform: scale(100%) rotate(720deg);
+            .reset:hover {
+                transform: scale(105%);
             }
     }
 }
 /********************
-Play Animation on hover
+Play Triangle Animation on hover
 ********************/
-// animation-name: typing, blink-caret, move;
-// animation-duration: 3000ms, 750ms, 1500ms;
-// animation-delay: 0ms, 0ms, 3000ms;
-// animation-timing-function: steps(19, end), step-end, ease-in;
-// animation-iteration-count: 1, infinite, 1;
 .hover {
     position: absolute;
     opacity: 0;
@@ -230,7 +219,7 @@ Play Animation on hover
         transform: translateX(0%)
     }
 /**************
-Play Button Animation On Click
+Play Triangle Animation On Click
 **************/
 
 #containerAppear {
