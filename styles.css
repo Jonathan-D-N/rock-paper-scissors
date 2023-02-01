@@ -141,19 +141,28 @@ body {
   grid-row: 3/4;
   width: 100%;
   margin-top: 2rem;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 .container .menu > * {
   width: 200px;
 }
 .container .menu > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  letter-spacing: 0.15rem;
+  display: grid;
+  place-items: center;
 }
-.container .menu > div h2 {
-  flex: 1;
+.container .menu > div h2, .container .menu > div p {
+  margin: 0.3rem;
+}
+.container .menu > div .playerScore, .container .menu > div .computerScore {
+  border-right: 0.15rem solid #a8a29e;
+  animation-name: typing, blink-caret;
+  animation-duration: 30ms, 750ms;
+  animation-timing-function: steps(1, end), step-end;
+  animation-iteration-count: 1, infinite;
 }
 .container .menu .reset {
   cursor: pointer;
@@ -162,7 +171,7 @@ body {
   justify-content: center;
 }
 .container .menu .reset:hover {
-  transform: scale(105%);
+  transform: rotate(3deg) scale(105%);
 }
 
 /********************
@@ -192,10 +201,6 @@ Play Triangle Animation on hover
 
 #dark1, #light1, #dark2 {
   transition: all 1s ease;
-}
-
-#PLAY {
-  transition: all 1.2s ease;
 }
 
 #dark2 {
