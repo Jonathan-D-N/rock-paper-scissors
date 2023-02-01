@@ -60,7 +60,7 @@ clickableElement.onclick = () => {
       reset.style.transition = "50ms"
    }, 2250);
 }
-//Adjust Rock Paper Scissors title text
+//Adjust Rock Paper Scissors title text location and scale
 moveText()
 function moveText() {
     const text = document.querySelector('.title')
@@ -73,11 +73,6 @@ function moveText() {
 
 //Reset button
 const resetImage = document.querySelector('.resetImage')
-
-// resetImage.addEventListener('mouseover', (e) => {
-//    resetImage.style.transform = "scale(105%)"
-// })
-
 resetImage.onclick = () => {
    resetImage.style.transition = "all 250ms ease-in"
    resetImage.style.transform = `rotate(360deg)`;
