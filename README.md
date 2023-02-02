@@ -5,6 +5,8 @@ The original scope of this project was to create a basic console-based rock pape
 
 Later on, the corriculum revisited this project to add a user interface, rather than a console-based game.
 [Link to live page](https://jonathan-d-n.github.io/rock-paper-scissors/)
+
+
 <img src="Screenshots/RPS.png" width="500">
 
 ## Features
