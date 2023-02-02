@@ -1,10 +1,12 @@
 // Page load animations
 const clickableElement = document.querySelector('.hover');
+const unClickableElement = document.querySelector('.animations')
 //Game Container
 const rock = document.querySelector('.rock')
 const paper = document.querySelector('.paper')
 const scissors = document.querySelector('.scissors')
 //Menu Container
+const menu = document.querySelector('.menu')
 const player = document.querySelector('.player')
 const reset = document.querySelector('.reset')
 const computer = document.querySelector('.computer')
@@ -68,16 +70,9 @@ function moveText() {
         text.style.transform = "translateY(0%)";
         text.style.transform = "scale(100%)";
         clickableElement.style.opacity = "100";
+        unClickableElement.removeAttribute("id", "unClickableAnimation")
      }, 4200);
 }
 
 //Reset button
-const resetImage = document.querySelector('.resetImage')
-resetImage.onclick = () => {
-   resetImage.style.transition = "all 250ms ease-in"
-   resetImage.style.transform = `rotate(360deg)`;
-   setTimeout(() => {
-      resetImage.style.transition = "all 0ms ease-in-out"
-      resetImage.style.transform = `rotate(0deg)`;
-   }, 250);
-}
+
