@@ -170,6 +170,9 @@ body {
                     animation-timing-function: steps(1, end), step-end;
                     animation-iteration-count: 1, infinite;
                 }
+                .playerSelection, .computerSelection {
+                    min-height: 23px;
+                }
             }
             .reset {
                 cursor: pointer;

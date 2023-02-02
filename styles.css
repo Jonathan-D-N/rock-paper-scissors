@@ -164,6 +164,9 @@ body {
   animation-timing-function: steps(1, end), step-end;
   animation-iteration-count: 1, infinite;
 }
+.container .menu > div .playerSelection, .container .menu > div .computerSelection {
+  min-height: 23px;
+}
 .container .menu .reset {
   cursor: pointer;
   border: none;
