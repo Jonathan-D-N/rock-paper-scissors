@@ -42,6 +42,7 @@ body {
   grid-template-rows: 220px 220px 220px;
 }
 .container .instructionsContainer {
+  transition: 1s;
   grid-row: 1/2;
   display: flex;
   flex-direction: column;
