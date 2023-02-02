@@ -21,6 +21,18 @@ body {
   pointer-events: none;
 }
 
+.winLoseContainer {
+  position: absolute;
+  transition: 1s;
+  opacity: 30%;
+  font-size: 3rem;
+  border-right: 0.35rem solid #a8a29e;
+  animation-name: blink-caret;
+  animation-duration: 750ms;
+  animation-timing-function: step-end;
+  animation-iteration-count: infinite;
+}
+
 .container {
   opacity: 100;
   width: 45vw;
