@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Roboto&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="./styles.css">
     <script src="./application.js" defer></script>
+    <script src="./game.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
@@ -22,25 +23,27 @@
         </div>
         <div class="gameContainer">
             <button class="rock" type="button" name="rock">
-            <img width="100" height="100" src="./Images/rock.png" alt="Rock">
+                <img width="100" height="100" src="./Images/rock.png" alt="Rock">
             </button>
             <button class="paper" type="button" name="paper">
-            <img width="100" height="100" src="./Images/paper.png" alt="Paper">
+                <img width="100" height="100" src="./Images/paper.png" alt="Paper">
             </button>
             <button class="scissors" type="button" name="scissors">
-            <img width="100" height="100" src="./Images/scissors.png" alt="Scissors">
+                <img width="100" height="100" src="./Images/scissors.png" alt="Scissors">
             </button>
         </div>
         <div class="menu">
             <div class="player">
-                <h2 class="playerScoreTitle">User Score</h2>
+                <h2 class="playerScoreTitle">Player</h2>
+                <p class="playerSelection">Selection</p>
                 <p class="playerScore">0</p>
             </div>
             <div class="reset" type="button">
                 <img class="resetImage" src="./Images/restart-svgrepo-com.svg" alt="Reset" type="button">
             </div>
             <div class="computer">
-                <h2 class="computerScoreTitle">Computer Score</h2>
+                <h2 class="computerScoreTitle">Computer</h2>
+                <p class="computerSelection">Selection</p>
                 <p class="computerScore">0</p>
             </div>
         </div>

@@ -47,19 +47,59 @@ function compareSelections() {
 function displaySelections(e) {
     if (e == 'draw') {
         playerSelectionVisual.style = "color:red"
-        playerSelectionVisual.innerHTML = playerSelection
+        backspaceText()
+        //playerSelectionVisual.innerHTML = playerSelection
         computerSelectionVisual.style = "color:red"
         computerSelectionVisual.innerHTML = computerSelection
     } else if (e == 'playerWin') {
         playerSelectionVisual.style = "color:green"
-        playerSelectionVisual.innerHTML = playerSelection
+        backspaceText()
+        //playerSelectionVisual.innerHTML = playerSelection
         computerSelectionVisual.style = "color:red"
         computerSelectionVisual.innerHTML = computerSelection
+        playerScore.innerHTML = ++playerPoint
     } else if (e == 'computerWin') {
         playerSelectionVisual.style = "color:red"
-        playerSelectionVisual.innerHTML = playerSelection
+        backspaceText()
+        //playerSelectionVisual.innerHTML = playerSelection
         computerSelectionVisual.style = "color:green"
         computerSelectionVisual.innerHTML = computerSelection
+        computerScore.innerHTML = ++computerPoint
     }
 }
 
+let i = 0;
+//let str = playerSelectionVisual.innerHTML;
+let speed = 100;
+let backspace = true;
+
+function boolChecker() {
+    if (backspace == true) {
+        backspaceText()
+    }
+}
+
+function backspaceText() {
+    let str = playerSelectionVisual.innerHTML;
+        playerSelectionVisual.innerHTML = str.slice(0, -1);
+        console.log('str: ', str.length)
+        if (str.length > 0) {setTimeout(backspaceText, speed)};
+        if (str.length == 0) {
+            type()
+        }
+}
+
+    function type(){
+        playerSelectionVisual.innerHTML += playerSelection.charAt(i);
+        i++;
+        console.log(i)
+        if (playerSelectionVisual.innerHTML.length == playerSelection.length) {
+            i = 0
+        }
+        if (playerSelectionVisual.innerHTML.length != playerSelection.length) {
+            console.log('playerSelection.length: ',playerSelection.length)
+            console.log('innerHTML.length: ', playerSelectionVisual.innerHTML.length)
+        setTimeout(type, speed);
+
+        }
+    }
