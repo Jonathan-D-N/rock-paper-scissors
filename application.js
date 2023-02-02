@@ -186,15 +186,15 @@ resetImage.onclick = () => {
     displaySelections('reset')
    resetImage.style.transition = "all 350ms ease-in"
    resetImage.style.transform = `rotate(360deg)`;
-   winLose.style.opacity = "0"
+   winLose.style.opacity = "0%"
    rock.style.transform = "scale(100%)"
-   rock.style.opacity = "100"
+   rock.style.opacity = "100%"
    paper.style.transform = "scale(100%)"
-   paper.style.opacity = "100"
+   paper.style.opacity = "100%"
    scissors.style.transform = "scale(100%)"
-   scissors.style.opacity = "100"
-   player.style.opacity = "100"
-   computer.style.opacity = "100"
+   scissors.style.opacity = "100%"
+   player.style.opacity = "100%"
+   computer.style.opacity = "100%"
    instructionsContainer.style.opacity = "100%"
    setTimeout(() => {
       resetImage.style.transition = "all 0ms ease-in-out"
