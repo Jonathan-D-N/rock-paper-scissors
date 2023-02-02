@@ -8,6 +8,7 @@ const playerScoreVisual = document.querySelector('.playerScore')
 const computerScoreVisual = document.querySelector('.computerScore')
 const playerSelectionVisual = document.querySelector('.playerSelection')
 const computerSelectionVisual = document.querySelector('.computerSelection')
+const instructionsContainer = document.querySelector('.instructionsContainer')
 function getRandomSelection() {
     computerSelection = (gameValues[~~(Math.random() * gameValues.length)]);
     compareSelections()
@@ -17,18 +18,12 @@ gameContainer.onclick = (e) => {
     if (e.target.parentNode.className == 'rock' || e.target.className == 'rock') {
         playerSelection = 'rock'
         getRandomSelection()
-        console.log('computerSelection: ', computerSelection)
-        console.log('playerSelection: ', playerSelection)
     } else if (e.target.parentNode.className == 'paper' || e.target.className == 'paper') {
         playerSelection = 'paper'
         getRandomSelection()
-        console.log('computerSelection: ', computerSelection)
-        console.log('playerSelection: ', playerSelection)
     } else if (e.target.parentNode.className == 'scissors' || e.target.className == 'scissors') {
         playerSelection = 'scissors'
         getRandomSelection()
-        console.log('computerSelection: ', computerSelection)
-        console.log('playerSelection: ', playerSelection)
     }
 }
 
@@ -200,6 +195,7 @@ resetImage.onclick = () => {
    scissors.style.opacity = "100"
    player.style.opacity = "100"
    computer.style.opacity = "100"
+   instructionsContainer.style.opacity = "100%"
    setTimeout(() => {
       resetImage.style.transition = "all 0ms ease-in-out"
       resetImage.style.transform = `rotate(0deg)`;
@@ -225,6 +221,7 @@ function endGame() {
        scissors.style.opacity = "0"
        player.style.opacity = "25%"
        computer.style.opacity = "25%"
+       instructionsContainer.style.opacity = "25%"
     }, 600);
     setTimeout(gameResultsType, 1200);
  }
