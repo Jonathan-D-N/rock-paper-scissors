@@ -161,10 +161,10 @@ function interaction() {
 const resetImage = document.querySelector('.resetImage')
 resetImage.onclick = () => {
     displaySelections('reset')
-   resetImage.style.transition = "all 250ms ease-in"
+   resetImage.style.transition = "all 350ms ease-in"
    resetImage.style.transform = `rotate(360deg)`;
    setTimeout(() => {
       resetImage.style.transition = "all 0ms ease-in-out"
       resetImage.style.transform = `rotate(0deg)`;
-   }, 650);
+   }, 350);
 }
