@@ -22,6 +22,10 @@ body {
     grid-template-rows: 1fr;
 }
 
+#unClickableGame, #unClickableMenu, #unClickableAnimation {
+    pointer-events: none;
+}
+
 .container {
     opacity: 100;
     width: 45vw;
@@ -113,6 +117,10 @@ body {
             border: none;
             width: 200px;
             height: 200px;
+        .unClickable {
+            position: absolute;
+        }
+
         }
         button:hover {
             transition: 10ms !important;
@@ -164,6 +172,7 @@ body {
                     margin: 0.3rem;
                 }
                 .playerScore, .computerScore {
+                    min-height: 23px;
                     border-right: .15rem solid $primary-text-color;
                     animation-name: typing, blink-caret;
                     animation-duration: 30ms, 750ms;
@@ -172,6 +181,11 @@ body {
                 }
                 .playerSelection, .computerSelection {
                     min-height: 23px;
+                    border-right: .15rem solid $primary-text-color;
+                    animation-name: blink-caret;
+                    animation-duration: 750ms;
+                    animation-timing-function: step-end;
+                    animation-iteration-count: infinite;
                 }
             }
             .reset {
