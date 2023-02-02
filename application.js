@@ -85,24 +85,25 @@ function pointIncrease() {
         playerScoreVisual.innerHTML = playerStr.slice(0, -1);
         let computerStr = computerScoreVisual.innerHTML
         computerScoreVisual.innerHTML = computerStr.slice(0, -1)
+        playerScoreVisual.innerHTML = playerPoint;
+        computerScoreVisual.innerHTML = computerPoint;
+        winLose.style = "color:green"
         setTimeout(() => {
-            playerScoreVisual.innerHTML = playerPoint;
-            computerScoreVisual.innerHTML = computerPoint;
-         }, 300);
-         winLose.style = "color:green"
-         endGame()
+            endGame()
+        }, 1250);
+
     } else if (computerPoint == 5) {
         winStatus = 'Computer Wins!'
         let playerStr = playerScoreVisual.innerHTML
         playerScoreVisual.innerHTML = playerStr.slice(0, -1);
         let computerStr = computerScoreVisual.innerHTML
         computerScoreVisual.innerHTML = computerStr.slice(0, -1)
+        playerScoreVisual.innerHTML = playerPoint;
+        computerScoreVisual.innerHTML = computerPoint;
+        winLose.style = "color:red"
         setTimeout(() => {
-            playerScoreVisual.innerHTML = playerPoint;
-            computerScoreVisual.innerHTML = computerPoint;
-         }, 300);
-         winLose.style = "color:red"
-         endGame()
+            endGame()
+         }, 1250);
     }  else {
         let playerStr = playerScoreVisual.innerHTML
         playerScoreVisual.innerHTML = playerStr.slice(0, -1);
