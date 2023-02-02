@@ -46,60 +46,70 @@ function compareSelections() {
 }
 function displaySelections(e) {
     if (e == 'draw') {
-        playerSelectionVisual.style = "color:red"
-        backspaceText()
-        //playerSelectionVisual.innerHTML = playerSelection
-        computerSelectionVisual.style = "color:red"
-        computerSelectionVisual.innerHTML = computerSelection
+        playerColor = "color:yellow"
+        computerColor = "color:yellow"
+        playerBackspaceText()
+        computerBackspaceText()
     } else if (e == 'playerWin') {
-        playerSelectionVisual.style = "color:green"
-        backspaceText()
-        //playerSelectionVisual.innerHTML = playerSelection
-        computerSelectionVisual.style = "color:red"
-        computerSelectionVisual.innerHTML = computerSelection
+        playerColor = "color:green"
+        computerColor = "color:red"
+        playerBackspaceText()
+        computerBackspaceText()
         playerScore.innerHTML = ++playerPoint
     } else if (e == 'computerWin') {
-        playerSelectionVisual.style = "color:red"
-        backspaceText()
-        //playerSelectionVisual.innerHTML = playerSelection
-        computerSelectionVisual.style = "color:green"
-        computerSelectionVisual.innerHTML = computerSelection
+        playerColor = "color:red"
+        computerColor = "color:green"
+        playerBackspaceText()
+        computerBackspaceText()
         computerScore.innerHTML = ++computerPoint
     }
 }
-
+let playerColor;
+let computerColor;
 let i = 0;
-//let str = playerSelectionVisual.innerHTML;
+let b = 0;
 let speed = 100;
-let backspace = true;
 
-function boolChecker() {
-    if (backspace == true) {
-        backspaceText()
-    }
-}
-
-function backspaceText() {
-    let str = playerSelectionVisual.innerHTML;
-        playerSelectionVisual.innerHTML = str.slice(0, -1);
-        console.log('str: ', str.length)
-        if (str.length > 0) {setTimeout(backspaceText, speed)};
-        if (str.length == 0) {
-            type()
+function playerBackspaceText() {
+    let playerStr = playerSelectionVisual.innerHTML;
+        playerSelectionVisual.innerHTML = playerStr.slice(0, -1);
+        if (playerStr.length > 0) {setTimeout(playerBackspaceText, speed)};
+        if (playerStr.length == 0) {
+            playerType()
         }
 }
 
-    function type(){
-        playerSelectionVisual.innerHTML += playerSelection.charAt(i);
-        i++;
-        console.log(i)
-        if (playerSelectionVisual.innerHTML.length == playerSelection.length) {
-            i = 0
-        }
-        if (playerSelectionVisual.innerHTML.length != playerSelection.length) {
-            console.log('playerSelection.length: ',playerSelection.length)
-            console.log('innerHTML.length: ', playerSelectionVisual.innerHTML.length)
-        setTimeout(type, speed);
-
-        }
+function playerType(){
+    playerSelectionVisual.style = playerColor
+    playerSelectionVisual.innerHTML += playerSelection.charAt(i);
+    i++;
+    console.log(i)
+    if (playerSelectionVisual.innerHTML.length == playerSelection.length) {
+        i = 0
     }
+    if (playerSelectionVisual.innerHTML.length != playerSelection.length) {
+    setTimeout(playerType, speed);
+    }
+}
+
+function computerBackspaceText() {
+    let computerStr = computerSelectionVisual.innerHTML;
+    computerSelectionVisual.innerHTML = computerStr.slice(0, -1);
+    if (computerStr.length > 0) {setTimeout(computerBackspaceText, speed)};
+    if (computerStr.length == 0) {
+        computerType()
+    }
+}
+
+function computerType(){
+    computerSelectionVisual.style = computerColor
+    computerSelectionVisual.innerHTML += computerSelection.charAt(b);
+    b++;
+    console.log(b)
+    if (computerSelectionVisual.innerHTML.length == computerSelection.length) {
+        b = 0
+    }
+    if (computerSelectionVisual.innerHTML.length != computerSelection.length) {
+    setTimeout(computerType, speed);
+    }
+}
