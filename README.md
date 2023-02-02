@@ -4,6 +4,7 @@ Rock Paper Scissors game for The Odin Project
 The original scope of this project was to create a basic console-based rock paper scissors game. This was the first Javascript project as part of The Odin Project's corriculum.
 
 Later on, the corriculum revisited this project to add a user interface, rather than a console-based game.
+
 [Link to live page](https://jonathan-d-n.github.io/rock-paper-scissors/)
 
 
@@ -12,7 +13,9 @@ Later on, the corriculum revisited this project to add a user interface, rather 
 ## Features
 * Animations featuring typewriter effects as well as scale, opacity, and translate changes.
     * Methods of animating page elements used in this project:
-        * CSS Pseudo-classes, CSS class/id changes, and Javascript.
+        * CSS Pseudo-classes
+        * CSS class/id changes
+        * Javascript functions.
 * Fully playable within the browser window.
 * Reset feature allows for multiple games to be played without reloading the page.
 
